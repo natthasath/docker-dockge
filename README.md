@@ -1,6 +1,6 @@
-# 🎉 Docker Uptime Kuma
+# 🎉 Docker Dockge
 
-Uptime Kuma is an open-source observability platform that provides web-based monitoring, tracing and logging for microservices-based applications, built on Envoy proxy.
+Dockge is a self-coined term inspired by Twitch emotes like sadge, bedge, or wokege, ending in -ge. Created for Docker, it aims to simplify container management using docker-compose.yaml. For individual containers, tools like Portainer or Docker CLI are recommended.
 
 ![version](https://img.shields.io/badge/version-1.0-blue)
 ![rating](https://img.shields.io/badge/rating-★★★★★-yellow)
@@ -8,7 +8,7 @@ Uptime Kuma is an open-source observability platform that provides web-based mon
 
 ### 🏆 Run
 
-- [http://localhost:3001/](http://localhost:3001/) username : `admin` password : `admin`
+- [http://localhost:5001/](http://localhost:5001/) username : `admin` password : `admin`
 
 ```shell
 docker-compose up -d
