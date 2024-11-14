@@ -1,3 +1,5 @@
 .env
 .db
 /uploads/*
+/data/dockge.db
+/data/db-config.json
