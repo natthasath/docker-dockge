@@ -9,7 +9,7 @@ services:
     networks:
       - default
     volumes:
-      - docker_dockge_data:/app/data
+      - data:/app/data
       - ./data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
       - /opt/stacks:/opt/stacks
