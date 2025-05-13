@@ -1,27 +1,26 @@
-version: '3.9'
 services:
-  web:
-    image: louislam/dockge:latest
-    container_name: dockge
-    restart: always
+  dockge:
+    container_name: ${DOCKGE_CONTAINER_NAME}
+    image: ${DOCKGE_IMAGE_NAME}:${DOCKGE_IMAGE_VERSION}
+    restart: ${RESTART_POLICY}
+    environment:
+      - DOCKGE_STACKS_DIR=${DOCKGE_STACKS_DIR}
     ports:
-      - ${APP_PORT}:5001
+      - ${DOCKGE_HTTP_PORT}:5001
+    volumes:
+      - default:/app/data
+      - ${DOCKGE_DATA_DIR}:/app/data
+      - ${DOCKER_SOCK_PATH}:/var/run/docker.sock
+      - ${DOCKGE_STACKS_DIR}:${DOCKGE_STACKS_DIR}
     networks:
       - default
-    volumes:
-      - data:/app/data
-      - ./data:/app/data
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /opt/stacks:/opt/stacks
-    environment:
-      - DOCKGE_STACKS_DIR=/opt/stacks
 
 networks:
   default:
-    name: docker_dockge_network
+    name: ${DOCKGE_CONTAINER_NAME}_network
     driver: bridge
 
 volumes:
-  data:
-    name: docker_dockge_data
+  default:
+    name: ${DOCKGE_CONTAINER_NAME}_data
     driver: local
