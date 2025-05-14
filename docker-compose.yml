@@ -1,3 +1,5 @@
+name: ${GLOBAL_NAME}
+
 services:
   dockge:
     container_name: ${DOCKGE_CONTAINER_NAME}
